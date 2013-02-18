@@ -1,4 +1,3 @@
-
 $(function() {
   var errorHandler, getLocation, showLocation;
   $("#receive").click(function() {

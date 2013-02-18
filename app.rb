@@ -24,6 +24,8 @@ set :allow_methods, [:get, :post, :options]
 #todo: tie into URL shortener API?
 #todo: favicon.ico
 #todo: make pretty error pages
+#TODO: Prevent default when user pressed enter on retrieval form.
+
 
 
 get '/:file' do

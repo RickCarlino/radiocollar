@@ -13,9 +13,9 @@ end
 
 class Ping
 include Mongoid::Document
-field :first_name
-field :middle_initial
-field :last_name
+field :name
+field :lat
+field :lng
 end
 
 set :allow_origin, :any

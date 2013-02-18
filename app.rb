@@ -8,6 +8,7 @@ Mongoid.configure do |config|
   name = "mongoid_test_db"
   host = "localhost"
   port = 27017
+  binding.pry
   config.database = Mongo::Connection.new.db(name)
 end
 
@@ -32,7 +33,7 @@ get '/' do
 end
 
 get '/p/:name' do
-  ping = Ping.where(name: params[:name])
+  ping = Ping.where(name: params[:name]).first
   redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
 end
 post '/' do

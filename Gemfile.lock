@@ -9,6 +9,8 @@ GEM
       multi_json (~> 1.0)
     backports (2.8.2)
     bson (1.8.2)
+    bson_ext (1.8.2)
+      bson (~> 1.8.2)
     builder (3.0.4)
     coderay (1.0.8)
     eventmachine (1.0.0)
@@ -57,6 +59,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   json
   mongo
   mongoid

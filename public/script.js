@@ -40,12 +40,8 @@ $(function() {
       type: "POST",
       url: "/",
       data: $("form.send").serialize(),
-      success: function() {
-        return alert("good");
-      },
       dataType: "json"
     });
     $('#sendName').val('');
-    return alert('Your location has been sent.');
   });
 });

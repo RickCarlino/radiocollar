@@ -43,6 +43,10 @@ get '/p/:name' do
   end
 end
 
+get '/clear' do
+  Ping.all.destroy
+end
+
 post '/' do
   unless Ping.create(params)
     "Something went wrong"

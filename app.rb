@@ -41,12 +41,12 @@ get '/p/:name' do
   if ping.nil?
     "That location was not found. Double check the name."
   else
-  redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
+    redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
   end
 end
 
 post '/' do
-  unless ping = Ping.create(params)
-    "Something went wrong. Inspect: #{ping.inspect}"
+  unless Ping.create(params)
+    "Something went wrong"
   end
 end

@@ -6,24 +6,17 @@
   <script src="script.js"></script>
 </head>
 <body>
-
-
-<h1>Radio Collar [ALPHA]</h1>
-<h2>It's like a URL shortener, for your phyiscal location.</h2>
-<p> Just enter a name for your current location, and pres send! Text or email the link to your friends to give directions. That's it! Why don't you give it a try?<p>
-
-
 <div class="container">
   <h1>Send a waypoint</h1>
   <p> <strong>Status:</strong><div class="status"> Not ready. </div></p>
-  <p> <strong>Note:</strong> Lorem epson dolorm epset.</p>
+  <p> <strong>Note:</strong> Your position isn't private. Use common sense when sharing your location.</p>
 <div class="row">
   <form class='send'>
-    <input class='input' name='name' value='name'><br/>
-    <input class='input lat' name='lat' type='text' value='Waiting for longitude data...'><br/>
-    <input class='input lng' name='lng' type='text' value='Waiting for latitude data...'><br/>
+    <input class='input' id='sendName' name='name' placeholder='name'><br/>
+    <input class='input' id='lat' name='lat' type='text' placeholder='Waiting for longitude data...'><br/>
+    <input class='input' id='lng' name='lng' type='text' placeholder='Waiting for latitude data...'><br/>
   </form>
-  <div class="button">Send</div>
+  <div class="button" id="send">Send</div>
 </div>
 </div>
 
@@ -32,9 +25,9 @@
   <p> <strong>Status:</strong><div class="status"> Not ready. </div></p>
 <div class="row">
   <form class='receive'>
-    <input class='input' name='waypoint' value='Waypoint name'><br/>
+    <input class='input' id="waypoint_name" name='waypoint' placeholder='Waypoint name'><br/>
   </form>
-  <div class="button">View</div>
+  <div class="button" id='receive'>View</div>
 </div></div>
 </body>
 </html>

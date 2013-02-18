@@ -1,19 +1,25 @@
+
 $(function() {
   var errorHandler, getLocation, showLocation;
+  $("#receive").click(function() {
+    var waypoint_url;
+    waypoint_url = "p/" + ($('#waypoint_name').val());
+    return document.location.href = waypoint_url;
+  });
   showLocation = function(position) {
     var latitude, longitude;
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    $('.lat').val(latitude);
-    $('.lng').val(longitude);
-    return $('.status').html("Ready to send");
+    $("#lat").val(latitude);
+    $("#lng").val(longitude);
+    return $(".status").html("Ready to send");
   };
   errorHandler = function(err) {
     if (err.code === 1) {
-      return $('.status').html("Access to GPS denied");
+      return $(".status").html("Access to GPS denied");
     } else {
       if (err.code === 2) {
-        return $('.status').html("Can't find location.");
+        return $(".status").html("Can't find location.");
       }
     }
   };
@@ -25,21 +31,22 @@ $(function() {
       };
       return navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
     } else {
-      return $('.status').html("App requires GPS connectivity. Try another device.");
+      return $(".status").html("App requires GPS connectivity. Try another device.");
     }
   };
   getLocation();
-  return $('.button').click(function() {
+  return $("#send").click(function() {
     getLocation();
     $.ajax({
       type: "POST",
-      url: '/',
-      data: $('form.send').serialize(),
+      url: "/",
+      data: $("form.send").serialize(),
       success: function() {
-        return alert('good');
+        return alert("good");
       },
-      dataType: 'json'
+      dataType: "json"
     });
-    return alert('sent');
+    $('#sendName').val('');
+    return alert('Your location has been sent.');
   });
 });

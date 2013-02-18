@@ -24,6 +24,8 @@ set :allow_methods, [:get, :post, :options]
 #TODO: Add form validation for new pings
 #TODO: Add error messages for ping retrieval
 #todo: tie into URL shortener API?
+#todo: favicon.ico
+#todo: pretty 'not found' page
 
 
 get '/:file' do
@@ -36,8 +38,15 @@ end
 
 get '/p/:name' do
   ping = Ping.where(name: params[:name]).first
+  if ping.nil?
+    "That location was not found. Double check the name."
+  else
   redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
+  end
 end
+
 post '/' do
-  ping = Ping.create(params)
+  unless ping = Ping.create(params)
+    "Something went wrong. Inspect: #{ping.inspect}"
+  end
 end

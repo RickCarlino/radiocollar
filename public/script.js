@@ -33,7 +33,7 @@ $(function() {
     getLocation();
     $.ajax({
       type: "POST",
-      url: 'http://localhost:4567/',
+      url: '/',
       data: $('form.send').serialize(),
       success: function() {
         return alert('good');

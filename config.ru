@@ -1,2 +1,2 @@
-require './sandbox'
+require './app'
 run Sinatra::Application

@@ -23,7 +23,7 @@ set :allow_methods, [:get, :post, :options]
 #TODO: Make a live URL creator that shows user's URL as they type. (fake AJAX)
 #TODO: Add form validation for new pings
 #TODO: Add error messages for ping retrieval
-#todo: tie into shortener API?
+#todo: tie into URL shortener API?
 
 
 get '/:file' do

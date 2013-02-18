@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: radio_collar_development
+      hosts:
+        - localhost:27017

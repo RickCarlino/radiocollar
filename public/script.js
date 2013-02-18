@@ -34,7 +34,7 @@ $(function() {
     $.ajax({
       type: "POST",
       url: 'http://localhost:4567/',
-      data: $('form').serialize(),
+      data: $('form.send').serialize(),
       success: function() {
         return alert('good');
       },

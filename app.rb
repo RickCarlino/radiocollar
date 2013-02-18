@@ -4,12 +4,8 @@ require 'pry' if development?
 require 'mongo'
 require 'mongoid'
 
-Mongoid.configure do |config|
-  name = "mongoid_test_db"
-  host = "localhost"
-  port = 27017
-  binding.pry
-  config.database = Mongo::Connection.new.db(name)
+configure do
+  Mongoid.load!('mongoid.yml')
 end
 
 class Ping
@@ -23,6 +19,9 @@ set :allow_origin, :any
 set :allow_methods, [:get, :post, :options]
 
 #TODO: Make hint text disappear on waypoint name textbox onClick
+#TODO: clear form on submit
+#TODO: Add form validation for new pings
+#TODO: Add error messages for ping retrieval
 
 get '/:file' do
   File.open("public/#{params[:file]}").readlines
@@ -33,6 +32,7 @@ get '/' do
 end
 
 get '/p/:name' do
+  binding.pry
   ping = Ping.where(name: params[:name]).first
   redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
 end

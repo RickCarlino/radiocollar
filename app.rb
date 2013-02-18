@@ -15,17 +15,15 @@ field :lat
 field :lng
 end
 
-set :allow_origin, :any
+#Turn this on if you end up using this backend for a phonegap API or something like that.
+#set :allow_origin, :any
 set :allow_methods, [:get, :post, :options]
 
-#TODO: Make hint text disappear on waypoint name textbox onClick
-#TODO: clear form on submit
-#TODO: Make a live URL creator that shows user's URL as they type. (fake AJAX)
-#TODO: Add form validation for new pings
-#TODO: Add error messages for ping retrieval
+#TODO: Make a live URL creator that shows user's URL as they type.
+#TODO: Add form validation for new pings (client side and server side)
 #todo: tie into URL shortener API?
 #todo: favicon.ico
-#todo: pretty 'not found' page
+#todo: make pretty error pages
 
 
 get '/:file' do

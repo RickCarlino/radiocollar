@@ -1,5 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+body{
+  font-family: 'Lato', sans-serif;
+}
 .container{
-  border: solid 1px #98ba3f;
+  border: solid 10px #98ba3f;
   padding: 4px;
   margin: 3px;
   border-radius: 8px;
@@ -18,13 +23,13 @@ input:-moz-placeholder { color:#fff; }
   margin: 6px;
 }
 .container h1{
-  font-size: 12pt;
+  font-family: 'Nova Square', cursive;
   margin: 6px;
-  border-bottom: 1px solid #98ba3f;
+  border-bottom: 10px solid #98ba3f;
 }
 .input {
   background-color: #98ba3f;
-  border-color: #98ba3f;
+  border: 0px;
   border-radius: 8px;
   padding: 3px;
   margin: 3px;
@@ -32,6 +37,7 @@ input:-moz-placeholder { color:#fff; }
   font-size: 16px;
   text-decoration: none;
   color: #ffffff;
+  font-family: 'Lato', sans-serif;
 }
 .button{
   border: solid 1px #98ba3f;
@@ -50,11 +56,16 @@ input:-moz-placeholder { color:#fff; }
 
 .button:hover {
   background-color: #245191;
+    font-family: 'Lato', sans-serif;
 }
 
-.row{
-  display: table;
+strong{
+  font-family: 'Nova Square', cursive;
+  font-size: 20px;
 }
+.row{
+}
+
 .status{
   display: block;
 }

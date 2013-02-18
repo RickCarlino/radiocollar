@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'mongoid'
+
+
 Mongoid.configure do |config|
   if ENV['MONGOHQ_URL']
     conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
@@ -24,11 +26,11 @@ set :allow_methods, [:get, :post, :options]
 #TODO: Make hint text disappear on waypoint name textbox onClick
 
 get '/:file' do
-  File.open("stuff/#{params[:file]}").readlines
+  File.open("public/#{params[:file]}").readlines
 end
 
 get '/' do
-  File.open("stuff/index.html").readlines
+  File.open("public/index.html").readlines
 end
 
 get '/p/:name' do

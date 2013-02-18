@@ -20,8 +20,11 @@ set :allow_methods, [:get, :post, :options]
 
 #TODO: Make hint text disappear on waypoint name textbox onClick
 #TODO: clear form on submit
+#TODO: Make a live URL creator that shows user's URL as they type. (fake AJAX)
 #TODO: Add form validation for new pings
 #TODO: Add error messages for ping retrieval
+#todo: tie into shortener API?
+
 
 get '/:file' do
   File.open("public/#{params[:file]}").readlines
@@ -32,11 +35,9 @@ get '/' do
 end
 
 get '/p/:name' do
-  binding.pry
   ping = Ping.where(name: params[:name]).first
   redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
 end
 post '/' do
-  binding.pry
   ping = Ping.create(params)
 end

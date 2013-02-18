@@ -1,23 +1,21 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'pry' if development?
+require 'mongo'
 require 'mongoid'
 
-
 Mongoid.configure do |config|
-  if ENV['MONGOHQ_URL']
-    conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-    uri = URI.parse(ENV['MONGOHQ_URL'])
-    config.master = conn.db(uri.path.gsub(/^\//, ''))
-  else
-    config.master = Mongo::Connection.from_uri("mongodb://localhost:27017").db('test')
-  end
+  name = "mongoid_test_db"
+  host = "localhost"
+  port = 27017
+  config.database = Mongo::Connection.new.db(name)
 end
 
 class Ping
-  include Mongoid::Document
-  field :waypoint
-  field :lat, type: float
-  field :lng, type: float
+include Mongoid::Document
+field :first_name
+field :middle_initial
+field :last_name
 end
 
 set :allow_origin, :any
@@ -38,8 +36,6 @@ get '/p/:name' do
   redirect("https://maps.google.com/maps?q=#{ping.lat},#{ping.lng}")
 end
 post '/' do
+  binding.pry
   ping = Ping.create(params)
-  puts "\n\n\n============================="
-  puts Ping.last.inspect
-  puts "\n\n\n============================="
 end

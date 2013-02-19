@@ -22,6 +22,9 @@ input:-moz-placeholder { color:#fff; }
 .container p{
   margin: 6px;
 }
+h1{
+  font-family: 'Nova Square', cursive;
+}
 .container h1{
   font-family: 'Nova Square', cursive;
   margin: 6px;

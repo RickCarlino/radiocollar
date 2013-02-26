@@ -42,6 +42,10 @@ $(function() {
       data: $("form.send").serialize(),
       dataType: "json"
     });
-    $('#sendName').val('');
+    var conf_url;
+    conf_url = "p/" + ($('#sendName').val());
+    alert("Your location has been sent. We will now redirect you to the map to verify accuracy. Your shareable URL for this waypoint is: http://radiocollarapp.heroku.com/"+conf_url)
+    document.location.href = conf_url;
   });
+
 });

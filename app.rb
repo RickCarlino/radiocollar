@@ -9,15 +9,15 @@ configure do
 end
 
 class Ping
-include Mongoid::Document
-field :name
-field :lat
-field :lng
+  include Mongoid::Document
+  field :name
+  field :lat
+  field :lng
 end
 
 #Turn this on if you end up using this backend for a phonegap API or something like that.
 #set :allow_origin, :any
-set :allow_methods, [:get, :post, :options]
+# set :allow_methods, [:get, :post, :options]
 
 #TODO: Make a live URL creator that shows user's URL as they type.
 #TODO: Add form validation for new pings (client side and server side)

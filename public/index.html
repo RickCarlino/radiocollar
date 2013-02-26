@@ -27,7 +27,7 @@
 <div class="container">
   <h1>View a saved waypoint</h1>
 <div class="row">
-  <form class='receive'>
+  <form class='receive' onkeypress="return event.keyCode != 13;">
     <input class='input' id="waypoint_name" name='waypoint' placeholder='Waypoint name'><br/>
   </form>
   <div class="button" id='receive'>View</div>

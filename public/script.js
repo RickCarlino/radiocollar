@@ -1,3 +1,4 @@
+//Compiled with Coffeescript, modified post mortem with pur JS.
 $(function() {
   var errorHandler, getLocation, showLocation;
   $("#receive").click(function() {
@@ -44,7 +45,7 @@ $(function() {
     });
     var conf_url;
     conf_url = "p/" + ($('#sendName').val());
-    alert("Your location has been sent. We will now redirect you to the map to verify accuracy. Your shareable URL for this waypoint is: http://radiocollarapp.heroku.com/"+conf_url)
+    alert("Your location has been sent. We will now redirect you to the map to verify accuracy. Your shareable URL for this waypoint is: http://radiocollar.heroku.com/"+conf_url);
     document.location.href = conf_url;
   });
 

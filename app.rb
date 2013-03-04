@@ -26,8 +26,6 @@ end
 #todo: make pretty error pages
 #TODO: Prevent default when user pressed enter on retrieval form.
 
-
-
 get '/:file' do
   File.open("public/#{params[:file]}").readlines
 end

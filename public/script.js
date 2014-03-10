@@ -1,4 +1,4 @@
-//Compiled with Coffeescript, modified post mortem with pur JS.
+// Compiled with Coffeescript
 $(function() {
   var errorHandler, getLocation, showLocation;
   $("#receive").click(function() {

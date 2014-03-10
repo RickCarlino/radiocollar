@@ -1,6 +1,14 @@
 radiocollar
 ===========
-A way to track your GPS location using HTML5 geolocation. [Live demo is up on Heroku](http://radiocollar.herokuapp.com/)
+A location sharing app I wrote 4.2 million years ago using Sinatra and MongoDB. [Newer (but still ancient) version is up on Heroku](http://radiocollar.herokuapp.com/)
+
+![screenshot](screenshop.png "screenshot")
+
+Running the code
+================
+1. `ruby app.rb`
+
+Works fine on Ruby 2.1.1
 
 Sending your location
 =====================
@@ -9,14 +17,14 @@ Sending your location
 
 Viewing someone elses location
 ==============================
-1. Enter the waypoint into the form
+1. Enter the waypoint name into the form
 2. submit
 
 _OR_
 
 1. Go to radiocollar.herokuapp.com/p/[NAME OF THE WAYPOINT]
 
-Need a _real_ location naming service?
-====================================
+Similar services
+================
 
-If you like the service and would like to use an _actual_ location naming service, I recomend using [Naymit](www.naymit.com). This application is currently in Alpha phase and is mostly intended to be used as an example for programmers who are trying to manipulate geodata.
+ * [Naymit](www.naymit.com)

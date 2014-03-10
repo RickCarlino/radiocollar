@@ -2,7 +2,7 @@ radiocollar
 ===========
 A location sharing app I wrote 4.2 million years ago using Sinatra and MongoDB. [Newer (but still ancient) version is up on Heroku](http://radiocollar.herokuapp.com/)
 
-![screenshot](screenshop.png "screenshot")
+![screenshot](screenshot.png "screenshot")
 
 Running the code
 ================
